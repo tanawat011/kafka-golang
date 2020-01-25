@@ -1,6 +1,7 @@
 .DS_Store
 .idea
 .vscode
+kafka_data
 tmp
 vendor
 test-data-iOMXG.json
