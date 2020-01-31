@@ -10,7 +10,7 @@ import (
 )
 
 // CreateTopic is create initial topic
-func CreateTopic(topic string, bootstrapServers string) {
+func CreateTopic(topic string, bootstrapServers string, numberOfPartition int) {
 
 	adminClient, err := kafka.NewAdminClient(&kafka.ConfigMap{
 		"bootstrap.servers":       bootstrapServers,
@@ -34,7 +34,7 @@ func CreateTopic(topic string, bootstrapServers string) {
 	results, err := adminClient.CreateTopics(ctx,
 		[]kafka.TopicSpecification{{
 			Topic:             topic,
-			NumPartitions:     1,
+			NumPartitions:     numberOfPartition,
 			ReplicationFactor: 1}},
 		kafka.SetAdminOperationTimeout(maxDuration))
 

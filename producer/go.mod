@@ -1,4 +1,4 @@
-module kafka-golang-multitreading
+module kafka-golang-example/producer
 
 go 1.12
 
